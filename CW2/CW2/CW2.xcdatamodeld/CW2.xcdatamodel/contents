@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Assessment" representedClassName="Assessment" syncable="YES" codeGenerationType="class">
+        <attribute name="assessmentName" optional="YES" attributeType="String"/>
+        <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="level" optional="YES" attributeType="String"/>
+        <attribute name="markAwarded" optional="YES" attributeType="String"/>
+        <attribute name="moduleName" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="value" optional="YES" attributeType="String"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tasks" inverseName="containsAssessment" inverseEntity="Tasks"/>
+    </entity>
+    <entity name="Tasks" representedClassName="Tasks" codeGenerationType="class">
+        <attribute name="assessment" optional="YES" attributeType="String"/>
+        <attribute name="daysTillCompletion" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="taskDueDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="taskDueReminder" optional="YES" attributeType="String"/>
+        <attribute name="taskName" optional="YES" attributeType="String"/>
+        <attribute name="taskPercentage" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="containsAssessment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Assessment" inverseName="tasks" inverseEntity="Assessment"/>
+        <userInfo/>
+    </entity>
+    <elements>
+        <element name="Assessment" positionX="-166.0703125" positionY="148.46875" width="128" height="163"/>
+        <element name="Tasks" positionX="77.8671875" positionY="226.68359375" width="128" height="178"/>
+    </elements>
+</model>
